@@ -21,7 +21,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         log.info("root is : " + settings.ENV_ROOT)
-        auth_path = settings.ENV_ROOT / "auth.json"
+        log.info("config root is : " + settings.CONFIG_ROOT)
+        auth_path = (settings.CONFIG_ROOT / settings.CONFIG_PREFIX + "auth.json") if settings.CONFIG_ROOT else \
+            (settings.ENV_ROOT / "auth.json")
 
         log.info(' [*] reading {0}'.format(auth_path))
 

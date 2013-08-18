@@ -14,7 +14,7 @@ class Migration(DataMigration):
         unretired. But we're only going to check things from the last day, since anything older
         than that is probably still retired but not properly marked because of a bug."""
         oldest_allowed_unretired = datetime.datetime.now() - datetime.timedelta(days=1)
-        sql = "update queue_submission set retired=0 where pull_time is null and push_time is null " + \
+        sql = "update queue_submission set retired=false where pull_time is null and push_time is null " + \
               "and arrival_time > '{0}'".format(oldest_allowed_unretired.strftime('%Y-%m-%d %H:%M:%S'))
         db.execute(sql)
 

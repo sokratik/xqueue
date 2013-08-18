@@ -1,5 +1,4 @@
 Django==1.4.5
-MySQL-python==1.2.4c1
 South==0.7.6
 argparse==1.2.1
 boto==2.6.0
@@ -16,3 +15,4 @@ python-termstyle==0.1.10
 rednose==0.3
 requests==0.14.2
 wsgiref==0.1.2
+psycopg2==2.5.1
