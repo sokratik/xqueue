@@ -9,7 +9,7 @@ from settings import *
 import json
 from logsettings import get_logger_config
 from os.path import expanduser
-CONFIG_ROOT = path(expanduser("~")) / "sokratik-infra/json-configs"
+CONFIG_ROOT = path("/local/sokratik-infra/json-configs")
 
 # specified as an environment variable.  Typically this is set
 # in the service's upstart script and corresponds exactly to the service name.
